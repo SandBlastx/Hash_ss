@@ -1,0 +1,30 @@
+{
+  "server": {
+    "port": 3000,
+    "host": "localhost",
+    "mode": "local", // "local" or "remote"
+    "auth": {
+      "enabled": false,
+      "username": "admin",
+      "password": "hashcracker",
+      "jwtSecret": "your-secret-key",
+      "tokenExpiration": "24h"
+    }
+  },
+  "hashcat": {
+    "binPath": "/usr/bin/hashcat",
+    "defaultWordlist": "rockyou.txt",
+    "wordlistsPath": "./wordlists",
+    "rulesPath": "./rules",
+    "defaultRule": "best64.rule",
+    "outputPath": "./outputs",
+    "hashTypes": [
+      { "id": 0, "name": "MD5", "description": "MD5" },
+      { "id": 100, "name": "SHA1", "description": "SHA1" },
+      { "id": 1400, "name": "SHA2-256", "description": "SHA2-256" },
+      { "id": 1700, "name": "SHA2-512", "description": "SHA2-512" },
+      { "id": 3200, "name": "bcrypt", "description": "bcrypt $2*$, Blowfish (Unix)" }
+    ],
+    "defaultHashType": 0
+  }
+} 
